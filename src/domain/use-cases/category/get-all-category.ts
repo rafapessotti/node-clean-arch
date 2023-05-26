@@ -1,5 +1,9 @@
-import { Category } from "../../entities/category";
+export type ExecuteOutput = {
+  id?: number;
+  name: string;
+  description: string;
+};
 
 export interface IGetAllCategory {
-  execute(): Category[];
+  execute(): ExecuteOutput[];
 }
