@@ -1,9 +1,9 @@
 export type ExecuteOutput = {
-  id?: number;
+  id: number;
   name: string;
   description: string;
 };
 
 export interface IGetAllCategory {
-  execute(): ExecuteOutput[];
+  execute(): Promise<ExecuteOutput[]>;
 }

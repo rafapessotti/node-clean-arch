@@ -10,5 +10,5 @@ export type ExecuteOutput = {
 };
 
 export interface ICreateCategory {
-  execute(input: ExecuteInput): ExecuteOutput;
+  execute(input: ExecuteInput): Promise<ExecuteOutput>;
 }

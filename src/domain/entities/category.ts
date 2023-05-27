@@ -1,12 +1,12 @@
 export class Category {
-  private id?: number;
+  private id: number;
   private name: string;
   private description: string;
 
   constructor(name: string, description: string, id?: number) {
     this.name = name;
     this.description = description;
-    this.id = id;
+    this.id = id || 0;
   }
 
   get getName(): string {
@@ -15,7 +15,7 @@ export class Category {
   get getDescription(): string {
     return this.description;
   }
-  get getId(): number | undefined {
+  get getId(): number {
     return this.id;
   }
 }

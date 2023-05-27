@@ -3,7 +3,9 @@ import { InputCreateCategory } from "../request/input-create-category";
 import { OutputCreateCategory } from "../response/output-create-category";
 
 export class CreateCategory {
-  execute(inputCreateCategory: InputCreateCategory): OutputCreateCategory {
+  async execute(
+    inputCreateCategory: InputCreateCategory
+  ): Promise<OutputCreateCategory> {
     if (!inputCreateCategory.name) {
       throw new Error("Nome inválido");
     }
@@ -11,7 +13,7 @@ export class CreateCategory {
       throw new Error("Descrição inválida");
     }
     const useCase = CreateCategoryFactory();
-    const response = useCase.execute(inputCreateCategory);
+    const response = await useCase.execute(inputCreateCategory);
     return response;
   }
 }

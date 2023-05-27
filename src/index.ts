@@ -1,4 +1,7 @@
-import express, { Express, Request, Response } from "express";
+import * as dotenv from "dotenv";
+dotenv.config();
+
+import express, { Express } from "express";
 import bodyParser from "body-parser";
 import { route } from "./presentation/routes/category-route";
 

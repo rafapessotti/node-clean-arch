@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: rafapessotti
+      POSTGRES_PASSWORD: abc123
+      POSTGRES_DB: CRUD
+    volumes:
+      - D:\Rafael\Desktop\Full Cycle\DbPostgree:/var/lib/postgresql/data
+    ports:
+      - 5432:5432

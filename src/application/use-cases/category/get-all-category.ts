@@ -7,8 +7,8 @@ import { ICategoryRepository } from "../../repository/category-repository";
 export class GetAllCategoryUseCase implements IGetAllCategory {
   constructor(private readonly categoryRepository: ICategoryRepository) {}
 
-  execute(): ExecuteOutput[] {
-    const response = this.categoryRepository.getall();
+  async execute(): Promise<ExecuteOutput[]> {
+    const response = await this.categoryRepository.getall();
 
     return response.map((item) => ({
       id: item.getId,

@@ -9,9 +9,9 @@ import { ICategoryRepository } from "../../repository/category-repository";
 export class CreateCategoryUseCase implements ICreateCategory {
   constructor(private readonly categoryRepository: ICategoryRepository) {}
 
-  execute(input: ExecuteInput): ExecuteOutput {
+  async execute(input: ExecuteInput): Promise<ExecuteOutput> {
     const entitiCategory = new Category(input.name, input.description);
-    const response = this.categoryRepository.create(entitiCategory);
+    const response = await this.categoryRepository.create(entitiCategory);
     return {
       name: response.getName,
       description: response.getDescription,

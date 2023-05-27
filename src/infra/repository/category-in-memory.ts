@@ -3,7 +3,7 @@ import { Category } from "../../domain/entities/category";
 
 export class CategoryInMemory implements ICategoryRepository {
   private data: Category[] = [];
-  create(category: Category): Category {
+  async create(category: Category): Promise<Category> {
     // const categoryId = new Category(
     //   category.getName,
     //   category.getDescription,
@@ -12,7 +12,7 @@ export class CategoryInMemory implements ICategoryRepository {
     this.data.push(category);
     return category;
   }
-  getall(): Category[] {
+  async getall(): Promise<Category[]> {
     return this.data;
   }
 }
