@@ -25,7 +25,7 @@ export class CategoryPG implements ICategoryRepository {
   async getall(): Promise<Category[]> {
     const response = await this.prisma.category.findMany();
     return response.map(
-      (item) => new Category(item.name, item.description, item.id)
+      (item : any) => new Category(item.name, item.description, item.id)
     );
   }
   async delete(inputID: ExecuteInputID): Promise<void> {
